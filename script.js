@@ -47,6 +47,34 @@ function gunSayisi() {
     document.querySelector('.love-counter span').textContent = fark;
 }
 gunSayisi(); // hemen çalıştır
+
+        // Slider
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slider-img');
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(index) {
+    slides.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active-dot'));
+    slides[index].classList.add('active');
+    dots[index].classList.add('active-dot');
+}
+
+document.querySelector('.prev-btn').addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+});
+document.querySelector('.next-btn').addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+});
+
+// Otomatik geçiş (5 saniyede bir)
+setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}, 5000);
+        
         // ── ACTIVITIES (100 each) ──────────
         const romantic = [
             "Mum ışığında evde akşam yemeği", "Birlikte gün batımı izleyin", "El ele yıldızları seyredin",
