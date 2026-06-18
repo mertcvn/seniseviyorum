@@ -38,6 +38,15 @@
     if (checkAuth()) initAll();
 
     function initAll() {
+        // Aşk sayacı - başlangıç tarihini buraya yaz (yıl, ay-1, gün)
+const askBaslangic = new Date(2026, 5, 1); // Örnek: 1 Haziran 2026 (aylar 0'dan başlar, 5 = Haziran)
+
+function gunSayisi() {
+    const bugun = new Date();
+    const fark = Math.floor((bugun - askBaslangic) / (1000 * 60 * 60 * 24));
+    document.querySelector('.love-counter span').textContent = fark;
+}
+gunSayisi(); // hemen çalıştır
         // ── ACTIVITIES (100 each) ──────────
         const romantic = [
             "Mum ışığında evde akşam yemeği", "Birlikte gün batımı izleyin", "El ele yıldızları seyredin",
