@@ -577,3 +577,29 @@ body {
     background: #ff6b8a;
     box-shadow: 0 0 10px #ff6b8a;
 }
+#secretMessageBtn:hover {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 15px #ff6b8a);
+}
+.secret-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 107, 138, 0.95);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    z-index: 99999;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    animation: popIn 0.5s ease;
+    cursor: pointer;
+    max-width: 300px;
+}
+@keyframes popIn {
+    from { transform: translate(-50%, -50%) scale(0.3); opacity: 0; }
+    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
