@@ -561,3 +561,12 @@ setInterval(() => {
         console.log('✨ Boşluk tuşu ile sürpriz yapabilirsin!');
     }
 })();
+
+document.getElementById('secretMessageBtn').addEventListener('click', () => {
+    const popup = document.createElement('div');
+    popup.className = 'secret-popup';
+    popup.textContent = '💖 Seni her gün daha çok seviyorum Mercan! 💖';
+    popup.addEventListener('click', () => popup.remove());
+    document.body.appendChild(popup);
+    setTimeout(() => { if (popup.parentNode) popup.remove(); }, 4000);
+});
